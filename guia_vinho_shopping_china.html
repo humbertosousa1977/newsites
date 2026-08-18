@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Vinhos até US$ 30: Shopping China vs Brasil</title>
+    <style>
+        :root {
+            --bg-color: #f7f5f0;
+            --card-bg: #ffffff;
+            --text-main: #1f1f1f;
+            --text-muted: #666666;
+            --accent-gold: #b89254;
+            --accent-burgundy: #6b1d28;
+            --green-badge: #1b5e20;
+            --border-color: #e2dbd0;
+            --shadow-subtle: 0 4px 14px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        header {
+            text-align: center;
+            padding: 24px 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--accent-burgundy);
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .summary-stats {
+            display: flex;
+            justify-content: space-around;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .num {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--accent-burgundy);
+        }
+
+        .stat-item .label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--accent-burgundy);
+            margin: 24px 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .wine-card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .wine-name {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.25;
+            margin-bottom: 3px;
+        }
+
+        .wine-winery {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .wine-meta {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+
+        .rating-tag {
+            background: #fff3cd;
+            color: #856404;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .type-tag {
+            background: #f1f0ee;
+            color: #444;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+
+        /* DESTACADO COMPARAÇÃO DE PREÇOS */
+        .price-comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 6px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .price-box {
+            border-radius: 8px;
+            padding: 8px 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-box.shopping-china {
+            background-color: #f0fdf4;
+            border: 1.5px solid #86efac;
+        }
+
+        .price-box.brasil {
+            background-color: #fef2f2;
+            border: 1.5px solid #fca5a5;
+        }
+
+        .price-label {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 2px;
+        }
+
+        .price-box.shopping-china .price-label {
+            color: #166534;
+        }
+
+        .price-box.brasil .price-label {
+            color: #991b1b;
+        }
+
+        .price-val {
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .price-box.shopping-china .price-val {
+            color: #15803d;
+        }
+
+        .price-box.brasil .price-val {
+            color: #b91c1c;
+            
+        }
+
+        .price-sub {
+            font-size: 10px;
+            color: #666;
+            margin-top: 1px;
+        }
+
+        .savings-banner {
+            grid-column: span 2;
+            background: #15803d;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            text-align: center;
+            padding: 6px;
+            border-radius: 6px;
+            letter-spacing: 0.2px;
+        }
+
+        .selection-box {
+            background: #fefdfa;
+            border: 2px dashed var(--accent-gold);
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 24px;
+            margin-bottom: 30px;
+        }
+
+        .selection-box h3 {
+            font-size: 16px;
+            color: var(--accent-burgundy);
+            margin-bottom: 6px;
+        }
+
+        .selection-box p {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .selection-list {
+            list-style: none;
+        }
+
+        .selection-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #efe8df;
+            font-size: 12px;
+        }
+
+        .selection-item:last-child {
+            border-bottom: none;
+        }
+
+        .selection-total-box {
+            margin-top: 14px;
+            padding: 12px;
+            background: #ffffff;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .total-row.sc {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--green-badge);
+        }
+
+        .total-row.br {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .total-row.savings {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1.5px solid var(--accent-gold);
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--accent-burgundy);
+        }
+
+        footer {
+            text-align: center;
+            font-size: 11px;
+            color: #aaa;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Vinhos Shopping China (até US$ 30)</h1>
+        <p>Comparativo de Preços em Destaque | Vivino &gt; 3.9</p>
+    </header>
+
+    <div class="summary-stats">
+        <div class="stat-item">
+            <div class="num">24</div>
+            <div class="label">Rótulos</div>
+        </div>
+        <div class="stat-item">
+            <div class="num">3.9+</div>
+            <div class="label">Vivino</div>
+        </div>
+        <div class="stat-item">
+            <div class="num">até 60%</div>
+            <div class="label">Economia</div>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <span>Catálogo com Preços em Destaque</span>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">1. Primitivo di Manduria Sessantanni</div>
+            <div class="wine-winery">San Marzano • Puglia, Itália</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.4 Vivino</span>
+                <span class="type-tag">Tinto (Primitivo)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 156.80</span>
+                <span class="price-sub">US$ 28.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 390.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 233.20 (60% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">2. Edizione Autoctona 20 Cinque Autoctoni</div>
+            <div class="wine-winery">Farnese Fantini • Abruzzo / Puglia, Itália</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.3 Vivino</span>
+                <span class="type-tag">Tinto (Montepulciano / Primitivo)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 140.00</span>
+                <span class="price-sub">US$ 25.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 350.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 210.00 (60% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">3. Luigi Bosca Gala 1</div>
+            <div class="wine-winery">Luigi Bosca • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.3 Vivino</span>
+                <span class="type-tag">Tinto (Malbec Blend)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 134.40</span>
+                <span class="price-sub">US$ 24.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 320.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 185.60 (58% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">4. D.V. Catena Malbec - Malbec</div>
+            <div class="wine-winery">Bodega Catena Zapata • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.3 Vivino</span>
+                <span class="type-tag">Tinto (Malbec)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 81.20</span>
+                <span class="price-sub">US$ 14.50</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 190.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 108.80 (57% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">5. Catena Alta Cabernet Sauvignon</div>
+            <div class="wine-winery">Bodega Catena Zapata • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Tinto (Cabernet Sauvignon)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 168.00</span>
+                <span class="price-sub">US$ 30.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 420.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 252.00 (60% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">6. Catena Alta Chardonnay</div>
+            <div class="wine-winery">Bodega Catena Zapata • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Branco (Chardonnay)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 156.80</span>
+                <span class="price-sub">US$ 28.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 390.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 233.20 (60% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">7. Whispering Angel Rosé</div>
+            <div class="wine-winery">Château d'Esclans • Provence, França</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Rosé (Grenache Blend)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 123.20</span>
+                <span class="price-sub">US$ 22.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 310.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 186.80 (60% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">8. Lucente Luce della Vite</div>
+            <div class="wine-winery">Tenable Luce della Vite • Toscana, Itália</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Tinto (Merlot / Sangiovese)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 156.80</span>
+                <span class="price-sub">US$ 28.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 390.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 233.20 (60% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">9. El Enemigo Cabernet Franc</div>
+            <div class="wine-winery">Aleanna (El Enemigo) • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Tinto (Cabernet Franc)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 109.20</span>
+                <span class="price-sub">US$ 19.50</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 260.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 150.80 (58% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">10. Luigi Bosca De Sangre Red Blend</div>
+            <div class="wine-winery">Luigi Bosca • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Tinto (Cabernet Sauvignon Blend)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 100.80</span>
+                <span class="price-sub">US$ 18.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 240.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 139.20 (58% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">11. Miraval Côtes de Provence Rosé</div>
+            <div class="wine-winery">Château Miraval • Provence, França</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Rosé (Cinsault / Grenache)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 117.60</span>
+                <span class="price-sub">US$ 21.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 280.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 162.40 (58% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">12. El Enemigo Malbec</div>
+            <div class="wine-winery">Aleanna (El Enemigo) • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Tinto (Malbec)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 106.40</span>
+                <span class="price-sub">US$ 19.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 250.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 143.60 (57% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">13. D.V. Catena Cabernet - Malbec</div>
+            <div class="wine-winery">Bodega Catena Zapata • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Tinto (Cabernet / Malbec)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 77.84</span>
+                <span class="price-sub">US$ 13.90</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 180.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 102.16 (57% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">14. Luigi Bosca Bohème Brut Nature</div>
+            <div class="wine-winery">Luigi Bosca • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Espumante (Pinot Noir / Chardonnay)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 145.60</span>
+                <span class="price-sub">US$ 26.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 340.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 194.40 (57% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">15. El Enemigo Chardonnay</div>
+            <div class="wine-winery">Aleanna (El Enemigo) • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.2 Vivino</span>
+                <span class="type-tag">Branco (Chardonnay)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 106.40</span>
+                <span class="price-sub">US$ 19.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 240.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 133.60 (56% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">16. Alma Negra Misterio Red Blend</div>
+            <div class="wine-winery">Ernesto Catena • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.1 Vivino</span>
+                <span class="type-tag">Tinto (Red Blend)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 86.80</span>
+                <span class="price-sub">US$ 15.50</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 210.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 123.20 (59% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">17. Le Differe Tenuta San Guido</div>
+            <div class="wine-winery">Tenuta San Guido • Toscana, Itália</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.1 Vivino</span>
+                <span class="type-tag">Tinto (Cabernet / Sangiovese)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 134.40</span>
+                <span class="price-sub">US$ 24.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 320.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 185.60 (58% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">18. Amarone della Valpolicella Luigi Righetti</div>
+            <div class="wine-winery">Luigi Righetti • Veneto, Itália</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.1 Vivino</span>
+                <span class="type-tag">Tinto (Corvina Blend)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 145.60</span>
+                <span class="price-sub">US$ 26.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 350.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 204.40 (58% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">19. Pesquera Crianza</div>
+            <div class="wine-winery">Tinto Pesquera • Ribera del Duero, Espanha</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.1 Vivino</span>
+                <span class="type-tag">Tinto (Tempranillo)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 123.20</span>
+                <span class="price-sub">US$ 22.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 290.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 166.80 (58% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">20. Esporão Reserva Tinto</div>
+            <div class="wine-winery">Herdade do Esporão • Alentejo, Portugal</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.1 Vivino</span>
+                <span class="type-tag">Tinto (Aragonez Blend)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 92.40</span>
+                <span class="price-sub">US$ 16.50</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 220.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 127.60 (58% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">21. D.V. Catena Syrah - Syrah</div>
+            <div class="wine-winery">Bodega Catena Zapata • Mendoza, Argentina</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.1 Vivino</span>
+                <span class="type-tag">Tinto (Syrah)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 78.40</span>
+                <span class="price-sub">US$ 14.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 180.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 101.60 (56% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">22. Château Kefraya Rouge</div>
+            <div class="wine-winery">Château Kefraya • Bekaa Valley, Líbano</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.0 Vivino</span>
+                <span class="type-tag">Tinto (Cabernet / Syrah)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 123.20</span>
+                <span class="price-sub">US$ 22.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 310.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 186.80 (60% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">23. Clarendelle Bordeaux Rouge</div>
+            <div class="wine-winery">Domaine Clarence Dillon • Bordeaux, França</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.0 Vivino</span>
+                <span class="type-tag">Tinto (Bordeaux Blend)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 110.88</span>
+                <span class="price-sub">US$ 19.80</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 270.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 159.12 (59% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="wine-card">
+        <div>
+            <div class="wine-name">24. Le Haut-Médoc de Giscours</div>
+            <div class="wine-winery">Château Giscours • Bordeaux, França</div>
+            <div class="wine-meta">
+                <span class="rating-tag">&#9733; 4.0 Vivino</span>
+                <span class="type-tag">Tinto (Cabernet / Merlot)</span>
+            </div>
+        </div>
+
+        <div class="price-comparison-grid">
+            <div class="price-box shopping-china">
+                <span class="price-label">Shopping China</span>
+                <span class="price-val">R$ 140.00</span>
+                <span class="price-sub">US$ 25.00</span>
+            </div>
+            <div class="price-box brasil">
+                <span class="price-label">Preço Brasil</span>
+                <span class="price-val">R$ 340.00</span>
+                <span class="price-sub">Mercado Livre / Varejo</span>
+            </div>
+            <div class="savings-banner">
+                &#128293; ECONOMIA DE R$ 200.00 (59% OFF)
+            </div>
+        </div>
+    </div>
+
+    <div class="selection-box" id="pedido-ideal">
+        <h3>&#127863; Sugestão: Caixa Econômica de 12 Vinhos</h3>
+        <p>Seleção ideal até US$ 30 por garrafa no Shopping China.</p>
+
+        <ul class="selection-list">
+
+            <li class="selection-item">
+                <div>
+                    <strong>Primitivo di Manduria Sessantanni</strong><br>
+                    <span style="color: #777;">&#9733; 4.4 | Tinto</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 156.80</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 390.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>Edizione Autoctona 20 Cinque Autoctoni</strong><br>
+                    <span style="color: #777;">&#9733; 4.3 | Tinto</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 140.00</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 350.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>Luigi Bosca Gala 1</strong><br>
+                    <span style="color: #777;">&#9733; 4.3 | Tinto</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 134.40</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 320.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>D.V. Catena Malbec - Malbec</strong><br>
+                    <span style="color: #777;">&#9733; 4.3 | Tinto</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 81.20</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 190.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>Catena Alta Cabernet Sauvignon</strong><br>
+                    <span style="color: #777;">&#9733; 4.2 | Tinto</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 168.00</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 420.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>Catena Alta Chardonnay</strong><br>
+                    <span style="color: #777;">&#9733; 4.2 | Branco</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 156.80</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 390.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>Whispering Angel Rosé</strong><br>
+                    <span style="color: #777;">&#9733; 4.2 | Rosé</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 123.20</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 310.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>Lucente Luce della Vite</strong><br>
+                    <span style="color: #777;">&#9733; 4.2 | Tinto</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 156.80</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 390.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>El Enemigo Cabernet Franc</strong><br>
+                    <span style="color: #777;">&#9733; 4.2 | Tinto</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 109.20</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 260.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>Luigi Bosca De Sangre Red Blend</strong><br>
+                    <span style="color: #777;">&#9733; 4.2 | Tinto</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 100.80</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 240.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>Miraval Côtes de Provence Rosé</strong><br>
+                    <span style="color: #777;">&#9733; 4.2 | Rosé</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 117.60</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 280.00</div>
+                </div>
+            </li>
+
+            <li class="selection-item">
+                <div>
+                    <strong>El Enemigo Malbec</strong><br>
+                    <span style="color: #777;">&#9733; 4.2 | Tinto</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-weight: 800; color: var(--green-badge);">R$ 106.40</div>
+                    <div style="font-size: 10px; color: #888; ">BR R$ 250.00</div>
+                </div>
+            </li>
+
+        </ul>
+
+        <div class="selection-total-box">
+            <div class="total-row sc">
+                <span>Total Shopping China:</span>
+                <span>R$ 1551.20 (US$ 277.00)</span>
+            </div>
+            <div class="total-row br">
+                <span>Total no Brasil:</span>
+                <span style="">R$ 3790.00</span>
+            </div>
+            <div class="total-row savings">
+                <span>Economia Total na Caixa:</span>
+                <span>R$ 2238.80 (59% de Desconto)</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Preços convertidos à taxa de câmbio estimada (US$ 1,00 = R$ 5,60).</p>
+        <p>Guia Informativo de Compras - Shopping China / Pedro Juan Caballero &amp; Ciudad del Este.</p>
+    </footer>
+
+
+	</body></html>
